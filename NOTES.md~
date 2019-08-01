@@ -1,0 +1,15 @@
+Notes
+=====
+
+Development was done with Python 2.
+
+Setup
+===
+
+1. Python 2.7 must be installed and set up. There are no external dependencies required.
+2. The pfxsearch script can be run either as a script or a python file (```./pfxsearch ...``` or ```python pfxsearch ...```)
+
+Usage
+===
+
+You can run the script via ```./pfxsearch prefix```. For a complete list of command line options, run ```./pfxsearch -h```.

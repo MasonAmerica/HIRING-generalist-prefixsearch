@@ -1,0 +1,49 @@
+#!/usr/bin/python
+
+import argparse
+import os
+
+parser = argparse.ArgumentParser(description='Find words with the given prefix')
+parser.add_argument('prefix', type=str, help='Prefix to search')
+parser.add_argument('-n', action='store_true', help='Count words matching prefix')
+parser.add_argument('--dictionary', type=str, help='Full path to dictionary file')
+
+def is_match(word, prefix): return word.startswith(prefix)
+
+def count_matches(matches): print len(matches)
+
+def print_matches(matches):
+    for match in matches:
+        print match
+
+def normalize_words(words):
+    normalized_words = list()
+    for word in words:
+        normalized_words.append(word.strip())
+    return normalized_words
+
+def find_matches(words, prefix):
+    matches = list()
+    for word in words:
+        if is_match(word, prefix): matches.append(word)
+    return matches
+
+def main(filename, prefix, count_words):
+    with open(filename) as f:
+        words = normalize_words(f.readlines())
+        matches = find_matches(words, prefix)
+        if count_words: count_matches(matches)
+        else:           print_matches(matches)
+        
+if __name__ == '__main__':
+    args = parser.parse_args()
+    if args.dictionary:
+        dictionary = args.dictionary
+    else:
+        dictionary = '{}/{}'.format(os.path.dirname(os.path.abspath(__file__)), 'dict.txt')
+
+    if not os.path.exists(dictionary):
+        print 'Cannot find dictionary: `{}`'.format(dictionary)
+        exit(1)
+
+    main(dictionary, args.prefix, args.n)
