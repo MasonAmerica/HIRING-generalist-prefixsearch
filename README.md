@@ -4,18 +4,18 @@ Mason Engineering - Generalist Engineer exercise
 # Prefix Search
 
 Your objective is to write a tool named `pfxsearch` in one of the languages
-shown below. This tool will display a prompt for users to a prefix search for a word and then print
+shown below. This tool will display a prompt loop for users to search words by prefix and then print
 a list of all words in a given dictionary that match the provided prefix (ie. words that begin
 with that prefix). The dictionary is provided via the `dict.txt` file included in this repository.
 
 ## Example
 
-For instance, a run of the program may look like this:
+For instance, a run of the program may look like this, where `>` is the prompt:
 
 ```
 ./pfxsearch
 
->ban
+> ban
 
 ban
 banana
@@ -23,6 +23,19 @@ bananas
 bane
 bangle
 bangles
+:
+:
+
+> gas
+
+gas
+gasalier
+gasaliers
+gasan
+gasbag
+gasbags
+gasboat
+gascheck
 :
 :
 ```
