@@ -3,8 +3,8 @@ Mason Engineering - Generalist Engineer exercise
 
 # Prefix Search
 
-Your objective is to write a simple command-line tool named `pfxsearch` in one of the languages
-shown below. This tool will accept a string parameter via the command line, and print
+Your objective is to write a tool named `pfxsearch` in one of the languages
+shown below. This tool will display a prompt for users to a prefix search for a word and then print
 a list of all words in a given dictionary that match the provided prefix (ie. words that begin
 with that prefix). The dictionary is provided via the `dict.txt` file included in this repository.
 
@@ -13,7 +13,9 @@ with that prefix). The dictionary is provided via the `dict.txt` file included i
 For instance, a run of the program may look like this:
 
 ```
-./pfxsearch ban
+./pfxsearch
+
+>ban
 
 ban
 banana
@@ -26,19 +28,6 @@ bangles
 ```
 
 # Addon 1
-If you reach this stage, add support for a command line parameter `-n` that will cause the tool
-to print the _number_ of matches found rather than the matches themselves.
-
-## Example
-
-For instance, a run of this enhanced program may look like this:
-
-```
-./pfxsearch -n ban
-123
-```
-
-# Addon 2
 If you reach this stage, add support for simple character wildcards, using the `?` character
 to represent "any alphabet".
 
@@ -47,7 +36,10 @@ to represent "any alphabet".
 For instance, a run of this enhanced program may look like this:
 
 ```
-./pfxsearch b?n
+./pfxsearch 
+
+> b?n
+
 ban
 banana
 bananas
@@ -61,8 +53,6 @@ binary
 :
 :
 ```
-
-You get the idea.
 
 # Submission
 
